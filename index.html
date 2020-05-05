@@ -16,22 +16,22 @@
         document.body.appendChild(app.view);
         let img = new PIXI.Sprite.from("img.jpg");
 		console.log("img", img.width, img.height);
-        img.width = window.innerHeight*0.67;
+        img.width = window.innerHeight*0.708;
         img.height = window.innerHeight;
         app.stage.addChild(img);
         depthMap = new PIXI.Sprite.from("depth1.jpg");
-	depthMap.width = window.innerHeight*0.67;
+	depthMap.width = window.innerHeight*0.708;
         depthMap.height = window.innerHeight;
         app.stage.addChild(depthMap);
 
         displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
         app.stage.filters = [displacementFilter];
         window.onmousemove = function(e) {
-		if (e.clientX > window.innerHeight*0.67) {
+		if (e.clientX > window.innerHeight*0.708) {
 			return;
 		}
 		console.log(e.clientX);
-		let w = window.innerHeight*0.67
+		let w = window.innerHeight*0.708
 		if (e.clientX < w) {
 			w = e.clientX;
 		}
